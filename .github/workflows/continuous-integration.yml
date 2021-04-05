@@ -6,6 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: python:3.8.9-slim
+    env:
+      PIPENV_VENV_IN_PROJECT: true
+      WORKON_HOME: ~/.venv
+      PATH: $PATH:~/.venv/bin
+      PYTHONPATH: ~/src
 
     steps:
       - name: Check out repository
@@ -18,13 +23,6 @@ jobs:
       - name: Configure pt_PT (Asia/Japan) timezone
         run: |
           ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
-      - name: Set Environment Variables
-        run: |
-          export PIPENV_VENV_IN_PROJECT=true
-          export WORKON_HOME=~/.venv
-          export PATH=$PATH:~/.venv/bin
-          export PYTHONPATH=~/src
-          ls -la
       - name: Install dependencies
         run: |
           export
