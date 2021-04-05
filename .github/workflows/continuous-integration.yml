@@ -9,7 +9,7 @@ jobs:
     env:
       PIPENV_VENV_IN_PROJECT: true
       WORKON_HOME: ~/.venv
-      PATH: $PATH:~/.venv/bin
+      VENV_PATH: ~/.venv/bin
       PYTHONPATH: ~/src
 
     steps:
