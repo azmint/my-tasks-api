@@ -22,19 +22,12 @@ jobs:
           ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
       - name: Install dependencies
         run: |
-          export PATH=$PATH:$GITHUB_WORKSPACE/.venv/bin
-          export PYTHONPATH=$GITHUB_WORKSPACE/src
-          export
           pip install --upgrade pip
           pip install pipenv
           pipenv sync --dev
-          ls -la
-          ls -la ./.venv/bin
-          pwd
       - name: Format Check
         run: |
-          export
-          black ./src --config=pyproject.toml --check
+          ./.venv/bin/black ./src --config=pyproject.toml --check
         if: always()
       - name: Lint Check
         run: |
