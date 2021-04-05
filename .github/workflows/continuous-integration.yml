@@ -33,6 +33,7 @@ jobs:
           pwd
       - name: Format Check
         run: |
+          export
           black ./src --config=pyproject.toml --check
         if: always()
       - name: Lint Check
