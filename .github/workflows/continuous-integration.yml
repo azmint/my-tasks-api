@@ -8,8 +8,8 @@ jobs:
     container: python:3.8.9-slim
     env:
       PIPENV_VENV_IN_PROJECT: true
-      VENV_PATH: ${{ env.GITHUB_WORKSPACE }}/.venv/bin
-      PYTHONPATH: ${{ env.GITHUB_WORKSPACE }}/src
+      VENV_PATH: $GITHUB_WORKSPACE/.venv/bin
+      PYTHONPATH: $GITHUB_WORKSPACE/src
 
     steps:
       - name: Check out repository
