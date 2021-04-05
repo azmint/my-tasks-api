@@ -11,6 +11,15 @@
 ## IDE
 * IntelliJ IDEA
 
+### IntelliJ IDEA
+
+#### Plugin
+* [Python](https://plugins.jetbrains.com/plugin/631-python)
+* [File Watchers](https://plugins.jetbrains.com/plugin/7177-file-watchers)
+    * [black](https://black.readthedocs.io/en/stable/editor_integration.html)
+* [Pylint](https://plugins.jetbrains.com/plugin/11084-pylint)
+* [Mypy](https://plugins.jetbrains.com/plugin/11086-mypy)
+
 ## Tools
 * Library Management
     * pipenv
