@@ -14,15 +14,10 @@ jobs:
           ref: ${{ github.head_ref }}
       - name: Configure pt_PT locale
         run: |
-          apt-get update -y
-          && apt-get install -y locales
-          && echo "pt_PT.UTF-8 UTF-8"
-          | tee -a /etc/locale.gen
-          && locale-gen pt_PT.UTF-8
+          apt-get update -y && apt-get install -y locales && echo "pt_PT.UTF-8 UTF-8" | tee -a /etc/locale.gen && locale-gen pt_PT.UTF-8
       - name: Configure pt_PT (Asia/Japan) timezone
         run: |
-          ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime
-          && dpkg-reconfigure --frontend noninteractive tzdata
+          ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
       - name: Set Environment Variables
         run: |
           export PIPENV_VENV_IN_PROJECT=true
