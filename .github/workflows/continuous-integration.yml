@@ -8,8 +8,6 @@ jobs:
     container: python:3.8.9-slim
     env:
       PIPENV_VENV_IN_PROJECT: true
-      VENV_PATH: $GITHUB_WORKSPACE/.venv/bin
-      PYTHONPATH: $GITHUB_WORKSPACE/src
 
     steps:
       - name: Check out repository
@@ -24,6 +22,8 @@ jobs:
           ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
       - name: Install dependencies
         run: |
+          export VENV_PATH=${{ env.GITHUB_WORKSPACE }}/.venv/bin
+          export PYTHONPATH=${{ env.GITHUB_WORKSPACE }}/src
           export
           pip install --upgrade pip
           pip install pipenv
