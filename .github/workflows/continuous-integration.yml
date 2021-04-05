@@ -8,7 +8,8 @@ jobs:
     container: python:3.8.9-slim
     env:
       PIPENV_VENV_IN_PROJECT: true
-      PYTHONPATH: ~/src
+      VENV_PATH: ./.venv/bin
+      PYTHONPATH: ./src
 
     steps:
       - name: Check out repository
@@ -24,25 +25,24 @@ jobs:
       - name: Install dependencies
         run: |
           export
-          python -m pip install --upgrade pip
-          python -m pip install pipenv
-          python -m pipenv sync --dev
+          pip install --upgrade pip
+          pip install pipenv
+          pipenv sync --dev
           ls -la
           ls -la ./.venv/bin
       - name: Format Check
         run: |
-          ls -la
-          ~/.venv/bin/black ./src --config=pyproject.toml --check
+          black ./src --config=pyproject.toml --check
         if: always()
       - name: Lint Check
         run: |
-          ~/.venv/bin/pylint ./src --rcfile=pylintrc
+          pylint ./src --rcfile=pylintrc
         if: always()
       - name: Type Check
         run: |
-          ~/.venv/bin/mypy ./src --config-file=mypy.ini
+          mypy ./src --config-file=mypy.ini
         if: always()
       - name: Unittest Check
         run: |
-          ~/.venv/bin/pytest ./test
+          pytest ./test
         if: always()
