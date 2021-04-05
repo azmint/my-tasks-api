@@ -24,13 +24,14 @@ jobs:
       - name: Install dependencies
         run: |
           export
-          pip install --upgrade pip
-          pip install pipenv
-          pipenv sync --dev
+          python -m pip install --upgrade pip
+          python -m pip install pipenv
+          python -m pipenv sync --dev
           ls -la
           ls -la ./.venv/bin
       - name: Format Check
         run: |
+          ls -la
           ~/.venv/bin/black ./src --config=pyproject.toml --check
         if: always()
       - name: Lint Check
