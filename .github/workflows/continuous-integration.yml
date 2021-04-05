@@ -21,8 +21,9 @@ jobs:
       - name: Set Environment Variables
         run: |
           export PIPENV_VENV_IN_PROJECT=true
-          export PATH=$PATH:/opt/.venv/bin
-          export PYTHONPATH=/opt/src
+          export WORKON_HOME=~/.venv
+          export PATH=$PATH:~/.venv/bin
+          export PYTHONPATH=~/src
       - name: Install dependencies
         run: |
           pip install --upgrade pip
