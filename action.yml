@@ -1,6 +1,0 @@
-# action.yml
-name: 'CI'
-description: 'CI'
-runs:
-  using: 'docker'
-  image: 'Dockerfile_CI'
