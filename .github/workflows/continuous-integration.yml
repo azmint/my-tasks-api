@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container: python:3.8.9-slim
     env:
-      WORKON_HOME: ~/.venv
+      PIPENV_VENV_IN_PROJECT: true
       PYTHONPATH: ~/src
 
     steps:
