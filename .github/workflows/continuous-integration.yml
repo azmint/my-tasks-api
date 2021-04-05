@@ -31,13 +31,13 @@ jobs:
         if: always()
       - name: Lint Check
         run: |
-          pylint ./src --rcfile=pylintrc
+          ./.venv/bin/pylint ./src --rcfile=pylintrc
         if: always()
       - name: Type Check
         run: |
-          mypy ./src --config-file=mypy.ini
+          ./.venv/bin/mypy ./src --config-file=mypy.ini
         if: always()
       - name: Unittest Check
         run: |
-          pytest ./test
+          ./.venv/bin/pytest ./test
         if: always()
