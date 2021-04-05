@@ -24,8 +24,10 @@ jobs:
           export WORKON_HOME=~/.venv
           export PATH=$PATH:~/.venv/bin
           export PYTHONPATH=~/src
+          ls -la
       - name: Install dependencies
         run: |
+          export
           pip install --upgrade pip
           pip install pipenv
           pipenv sync --dev
