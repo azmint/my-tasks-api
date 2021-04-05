@@ -30,7 +30,7 @@ jobs:
           pip install pipenv
           pipenv sync --dev
           ls -la
-          ls -la ./.venv
+          ls -la ./.venv/bin
       - name: Format Check
         run: |
           black ./src --config=pyproject.toml --check
