@@ -39,5 +39,6 @@ jobs:
         if: always()
       - name: Unittest Check
         run: |
+          export PYTHONPATH=$GITHUB_WORKSPACE/src
           ./.venv/bin/pytest ./test
         if: always()
