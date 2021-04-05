@@ -1,0 +1,44 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.8.9-slim
+    env:
+      PIPENV_VENV_IN_PROJECT: true
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Configure pt_PT locale
+        run: |
+          apt-get update -y && apt-get install -y locales && echo "pt_PT.UTF-8 UTF-8" | tee -a /etc/locale.gen && locale-gen pt_PT.UTF-8
+      - name: Configure pt_PT (Asia/Japan) timezone
+        run: |
+          ln -fs /usr/share/zoneinfo/Asia/Japan /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pipenv
+          pipenv sync --dev
+      - name: Format Check
+        run: |
+          ./.venv/bin/black ./src --config=pyproject.toml --check
+        if: always()
+      - name: Lint Check
+        run: |
+          ./.venv/bin/pylint ./src --rcfile=pylintrc
+        if: always()
+      - name: Type Check
+        run: |
+          ./.venv/bin/mypy ./src --config-file=mypy.ini
+        if: always()
+      - name: Unittest Check
+        run: |
+          export PYTHONPATH=$GITHUB_WORKSPACE/src
+          ./.venv/bin/pytest ./test
+        if: always()
