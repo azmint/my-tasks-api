@@ -28,15 +28,19 @@ jobs:
           pip install --upgrade pip
           pip install pipenv
           pipenv sync --dev
+          ls -la
       - name: Format Check
         run: |
           black ./src --config=pyproject.toml --check
+        if: always()
       - name: Lint Check
         run: |
           pylint ./src --rcfile=pylintrc
+        if: always()
       - name: Type Check
         run: |
           mypy ./src --config-file=mypy.ini
+        if: always()
       - name: Unittest Check
         run: |
           pytest ./test
