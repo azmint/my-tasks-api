@@ -8,7 +8,10 @@ class BaseError(Exception):
     """
 
     def __init__(
-        self, message: str, values: Dict[str, Any] = None, cause: Optional[Exception] = None
+        self,
+        message: str,
+        values: Optional[Dict[str, Any]] = None,
+        cause: Optional[Exception] = None,
     ):
         """
 
@@ -20,6 +23,9 @@ class BaseError(Exception):
         self.message: str = message
         self.values: Dict[str, Any] = values if values else {}
         self.cause: Optional[Exception] = cause
+
+    def __repr__(self) -> str:
+        return f"{self.__class__.__module__}.{self.__class__.__qualname__}({self.message}, {self.values}, {self.cause})"
 
 
 class ApplicationError(BaseError):
