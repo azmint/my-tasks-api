@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Continuous Integration
 
 on: [push]
 
@@ -31,10 +31,12 @@ jobs:
         if: always()
       - name: Lint Check
         run: |
+          export PYTHONPATH=$GITHUB_WORKSPACE/src
           ./.venv/bin/pylint ./src --rcfile=pylintrc
         if: always()
       - name: Type Check
         run: |
+          export PYTHONPATH=$GITHUB_WORKSPACE/src
           ./.venv/bin/mypy ./src --config-file=mypy.ini
         if: always()
       - name: Unittest Check
