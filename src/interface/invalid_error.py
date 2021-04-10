@@ -9,7 +9,10 @@ class InvalidDetail:
         self.message: str = message
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__module__}.{self.__class__.__qualname__}({self.item_name}, {self.message})"
+        return (
+            f"{self.__class__.__module__}.{self.__class__.__qualname__}"
+            + f"({self.item_name}, {self.message})"
+        )
 
 
 class InvalidError(Exception):

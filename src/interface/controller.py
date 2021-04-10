@@ -10,4 +10,4 @@ class AbstractController(abc.ABC):
     @abc.abstractmethod
     def execute(self, request: AbstractRequest, response: AbstractResponse):
         """エンドポイントの処理を実行する。"""
-        pass
+        raise NotImplementedError()

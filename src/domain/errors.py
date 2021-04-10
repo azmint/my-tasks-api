@@ -25,7 +25,10 @@ class BaseError(Exception):
         self.cause: Optional[Exception] = cause
 
     def __repr__(self) -> str:
-        return f"{self.__class__.__module__}.{self.__class__.__qualname__}({self.message}, {self.values}, {self.cause})"
+        return (
+            f"{self.__class__.__module__}.{self.__class__.__qualname__}"
+            + f"({self.message}, {self.values}, {self.cause})"
+        )
 
 
 class ApplicationError(BaseError):

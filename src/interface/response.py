@@ -11,4 +11,4 @@ class AbstractResponse(abc.ABC):
 
         :param data: データ
         """
-        pass
+        raise NotImplementedError()
