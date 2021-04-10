@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 flask = "==1.1.2"
+injector = "==0.18.4"
 
 [dev-packages]
 pytest = "==6.2.3"
