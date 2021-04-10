@@ -13,6 +13,12 @@
 
 ### IntelliJ IDEA
 
+#### Mark
+* Source
+    * ./src
+* Test
+    * ./test
+
 #### Plugin
 * [Python](https://plugins.jetbrains.com/plugin/631-python)
 * [File Watchers](https://plugins.jetbrains.com/plugin/7177-file-watchers)
@@ -31,3 +37,6 @@
     * mypy
 * Publish API Requirement
     * Swagger
+
+## Source
+[README.md](./src/README.md)
