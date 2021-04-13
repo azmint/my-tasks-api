@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
-class TaskID(str):
+class TaskID:
     """タスクID"""
 
     value: str
