@@ -1,17 +1,17 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from domain.milestone.details import Details
-from domain.milestone.period import Period
-from domain.milestone.summary import Summary
-from domain.milestone.milestone_id import MilestoneID
+from command.domain.sprint.details import Details
+from command.domain.sprint.period import Period
+from command.domain.sprint.summary import Summary
+from command.domain.sprint.sprint_id import SprintID
 
 
 @dataclass(frozen=True)
-class Milestone:
+class Sprint:
     """タスク"""
 
-    id: MilestoneID
+    id: SprintID
     summary: Summary = field(compare=False)
     details: Optional[Details] = field(compare=False)
     period: Period = field(compare=False)
