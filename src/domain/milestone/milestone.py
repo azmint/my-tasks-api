@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from typing import Optional
 
 from domain.milestone.details import Details
 from domain.milestone.period import Period
@@ -12,5 +13,5 @@ class Milestone:
 
     id: MilestoneID
     summary: Summary = field(compare=False)
-    details: Details = field(compare=False)
+    details: Optional[Details] = field(compare=False)
     period: Period = field(compare=False)
