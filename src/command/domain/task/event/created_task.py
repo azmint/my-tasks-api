@@ -5,7 +5,7 @@ from command.domain.task.task_id import TaskID
 
 
 @dataclass(frozen=True)
-class TaskCreated(Event):
+class CreatedTask(Event):
     """タスク作成イベント"""
 
     created_task_id: TaskID
