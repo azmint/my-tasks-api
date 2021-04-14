@@ -12,6 +12,7 @@ infrastructure -> interface -> command.usecase -> command.domain
 * Value Object
 * Entity
 * Repository Interface
+* Event
 
 ### command.usecase
 * Service
