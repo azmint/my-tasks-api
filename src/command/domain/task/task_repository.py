@@ -9,4 +9,9 @@ class TaskRepository(abc.ABC):
 
     @abc.abstractmethod
     def store(self, task: Task) -> CreatedTask:
+        """登録する
+
+        :param task: タスク
+        :return: イベント
+        """
         raise NotImplementedError()
