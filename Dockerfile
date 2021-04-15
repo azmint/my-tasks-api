@@ -12,12 +12,8 @@ ENV TZ JST-9
 RUN pip install --upgrade pip
 RUN pip install pipenv
 
+COPY ./src /opt
 COPY ./Pipfile.lock /opt/Pipfile.lock
-COPY ./src/boot.py /opt/boot.py
-COPY ./src/domain /opt/domain
-COPY ./src/usecase /opt/usecase
-COPY ./src/interface /opt/interface
-COPY ./src/infrastructure /opt/infrastructure
 
 WORKDIR opt
 RUN pipenv sync --system

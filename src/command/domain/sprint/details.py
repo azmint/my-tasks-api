@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
-class Summary(str):
-    """サマリー"""
+class Details:
+    """詳細"""
 
     value: str

@@ -6,14 +6,15 @@ Domain Driven Design
 ## Layer
 
 ### Dependencies
-infrastructure -> interface -> usecase -> domain
+infrastructure -> interface -> command.usecase -> command.domain
 
-### domain
+### command.domain
 * Value Object
 * Entity
 * Repository Interface
+* Event
 
-### usecase
+### command.usecase
 * Service
 * Coordinator
 
