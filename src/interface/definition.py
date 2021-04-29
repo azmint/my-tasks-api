@@ -7,8 +7,8 @@ Type = TypeVar("Type")
 class Definition(abc.ABC, Generic[Type]):
     """リクエストされるドメインクラスの定義"""
 
-    KEY = None
-    SCHEMA = None
+    KEY: str
+    SCHEMA: Dict[str, Any]
 
     @abc.abstractmethod
     def map(self, params: Dict[str, Any]) -> Type:
