@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import List
 
-from command.domain.task.task_id import TaskID
+from domain.task.task_id import TaskID
 
 
 class Type(Enum):

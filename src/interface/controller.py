@@ -9,5 +9,9 @@ class AbstractController(abc.ABC):
 
     @abc.abstractmethod
     def execute(self, request: AbstractRequest, response: AbstractResponse):
-        """エンドポイントの処理を実行する。"""
+        """エンドポイントの処理を実行する。
+
+        :param request: リクエスト
+        :param response: レスポンス
+        """
         raise NotImplementedError()

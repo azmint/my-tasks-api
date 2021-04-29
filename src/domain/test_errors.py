@@ -8,7 +8,7 @@ class TestBaseError:
 
     def test___repr__(self):
         """__repr__のテスト"""
-        from command.domain.errors import BaseError
+        from domain.errors import BaseError
 
         try:
             var = 1 / 0
