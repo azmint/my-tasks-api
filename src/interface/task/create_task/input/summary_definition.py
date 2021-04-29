@@ -10,13 +10,13 @@ from interface.definition import Definition
 class SummaryDefinition(Definition[Summary]):
     """Summaryの定義"""
 
-    KEY = 'summary'
+    KEY = "summary"
     SCHEMA = {
-        'type': 'string',
-        'required': True,
-        'nullable': False,
-        'minlength': 1,
-        'maxlength': 128
+        "type": "string",
+        "required": True,
+        "nullable": False,
+        "minlength": 1,
+        "maxlength": 128,
     }
 
     def map(self, params: Dict[str, Any]) -> Summary:

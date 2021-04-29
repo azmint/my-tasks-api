@@ -20,7 +20,9 @@ class CreateTaskController(AbstractController):
     def execute(self, request: AbstractRequest, response: AbstractResponse):
         required_data: RequiredData = self.input_data_mapper.map(request)
         event: CreatedTask = self.create_task.execute(required_data)
-        response.set_body({
-            'occurrence_datetime': event.occurrence_datetime.strftime('%Y-%m-%d %H:%M:%S.%f'),
-            'created_task_id': event.created_task_id.value,
-        })
+        response.set_body(
+            {
+                "occurrence_datetime": event.occurrence_datetime.strftime("%Y-%m-%d %H:%M:%S.%f"),
+                "created_task_id": event.created_task_id.value,
+            }
+        )

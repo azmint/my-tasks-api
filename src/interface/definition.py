@@ -1,7 +1,7 @@
 import abc
 from typing import TypeVar, Generic, Dict, Any
 
-Type = TypeVar('Type')
+Type = TypeVar("Type")
 
 
 class Definition(abc.ABC, Generic[Type]):
@@ -11,7 +11,7 @@ class Definition(abc.ABC, Generic[Type]):
     SCHEMA = None
 
     @abc.abstractmethod
-    def map(self,  params: Dict[str, Any]) -> Type:
+    def map(self, params: Dict[str, Any]) -> Type:
         """入力情報をドメインクラスに変換する
 
         :param params: 入力情報
