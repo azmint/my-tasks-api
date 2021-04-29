@@ -1,12 +1,11 @@
 from typing import Type
 
-from injector import Injector
-
 from infrastructure.flask.request import AppRequest
 from infrastructure.flask.response import AppResponse
+from infrastructure.injector.injector_facade import create_injector
 from interface.controller import AbstractController
 
-injector = Injector()
+injector = create_injector()
 
 
 def handle(controller_type: Type[AbstractController]) -> str:

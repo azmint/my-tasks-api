@@ -4,15 +4,15 @@ class TestTask:
     def test___eq__(self):
         """==でidのみが比較されているか"""
         from datetime import timedelta
-        from command.domain.task.task import Task
-        from command.domain.task.task_id import TaskID
-        from command.domain.task.summary import Summary
-        from command.domain.task.details import Details
-        from command.domain.task.status import Status
-        from command.domain.task.relations import Relations
-        from command.domain.task.relations import Relation
-        from command.domain.task.relations import Type
-        from command.domain.task.initial_estimate import InitialEstimate
+        from domain.task.task import Task
+        from domain.task.task_id import TaskID
+        from domain.task.summary import Summary
+        from domain.task.details import Details
+        from domain.task.status import Status
+        from domain.task.relations import Relations
+        from domain.task.relations import Relation
+        from domain.task.relations import Type
+        from domain.task.initial_estimate import InitialEstimate
 
         task1: Task = Task(
             TaskID("sample_id"),
@@ -35,15 +35,15 @@ class TestTask:
     def test___ne__(self):
         """==でidのみが比較されているか"""
         from datetime import timedelta
-        from command.domain.task.task import Task
-        from command.domain.task.task_id import TaskID
-        from command.domain.task.summary import Summary
-        from command.domain.task.details import Details
-        from command.domain.task.status import Status
-        from command.domain.task.relations import Relations
-        from command.domain.task.relations import Relation
-        from command.domain.task.relations import Type
-        from command.domain.task.initial_estimate import InitialEstimate
+        from domain.task.task import Task
+        from domain.task.task_id import TaskID
+        from domain.task.summary import Summary
+        from domain.task.details import Details
+        from domain.task.status import Status
+        from domain.task.relations import Relations
+        from domain.task.relations import Relation
+        from domain.task.relations import Type
+        from domain.task.initial_estimate import InitialEstimate
 
         task1: Task = Task(
             TaskID("sample_id1"),

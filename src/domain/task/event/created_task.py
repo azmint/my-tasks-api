@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from command.domain.event import Event
-from command.domain.task.task_id import TaskID
+from domain.event import Event
+from domain.task.task_id import TaskID
 
 
 @dataclass(frozen=True)

@@ -4,23 +4,26 @@
 Domain Driven Design
 
 ## Layer
+* Externally-independent library
+  * injector
+  * cerberus
 
 ### Dependencies
-infrastructure -> interface -> command.usecase -> command.domain
+infrastructure -> interface -> usecase -> domain
 
-### command.domain
+### domain
 * Value Object
 * Entity
 * Repository Interface
 * Event
 
-### command.usecase
+### usecase
 * Service
 * Coordinator
 
 ### infrastructure
 * Repository Implements
-* External Library
+* Externally dependent libraries
 * Rooting
 
 ### interface

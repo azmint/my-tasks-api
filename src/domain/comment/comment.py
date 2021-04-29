@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 
-from command.domain.comment.comment_id import CommentID
-from command.domain.comment.text import Text
-from command.domain.task.task_id import TaskID
+from domain.comment.comment_id import CommentID
+from domain.comment.text import Text
+from domain.task.task_id import TaskID
 
 
 @dataclass(frozen=True)
